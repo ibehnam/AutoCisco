@@ -1,0 +1,11 @@
+[package]
+name = "AutoCisco"
+version = "0.1.0"
+authors = ["Behnam Mohammadi"]
+edition = "2018"
+
+
+[dependencies]
+clap = { version = "3.1.6", features = ["derive"] }
+
+
