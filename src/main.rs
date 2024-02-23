@@ -141,7 +141,7 @@ fn connect_vpn(username: &str, password: &str) -> Result<(), String> {
     let username_script = format!(r#"tell application "System Events" to keystroke "{}""#, username);
     run_applescript(&username_script)?;
     run_applescript(r#"tell application "System Events" to keystroke tab"#)?;
-    thread::sleep(Duration::from_secs(500));
+    thread::sleep(Duration::from_secs(1));
 
     // Type the password and press Enter
     let password_script = format!(r#"tell application "System Events" to keystroke "{}""#, password);
