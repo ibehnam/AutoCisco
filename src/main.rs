@@ -180,7 +180,7 @@ fn connect_vpn(username: &str, password: &str) -> Result<(), String> {
 
 fn main() {
     let matches = App::new("AutoCisco")
-        .version("0.1.5")
+        .version("0.1.6")
         .author("Behnam Mohammadi - https://aplaceofmind.net")
         .about("Automatically connects to CMU's Cisco VPN using credentials")
         .arg(
