@@ -89,7 +89,7 @@ fn connect_vpn(username: &str, password: &str) -> Result<(), String> {
 
     // Wait for a specific UI element to appear to ensure the app is ready
     let start = Instant::now();
-    let timeout = Duration::from_secs(10); // 10 seconds timeout
+    let timeout = Duration::from_secs(15); // 15 seconds timeout
     loop {
         if start.elapsed() > timeout {
             return Err("❌ Application launch timed out.".to_string());
