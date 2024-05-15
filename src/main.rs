@@ -14,7 +14,7 @@ fn read_credentials_from_file(file_path: &PathBuf) -> io::Result<(String, String
     file.read_to_string(&mut contents)?;
     let lines: Vec<&str> = contents.lines().collect();
     if lines.len() >= 2 {
-        println!("🔑 Reading credentials from the file: {:?}", file_path);
+        println!("🪪 Reading credentials from the file: {:?}", file_path);
         Ok((lines[0].to_string(), lines[1].to_string()))
     } else {
         Err(io::Error::new(io::ErrorKind::Other, "Failed to read credentials from file"))
@@ -141,7 +141,7 @@ fn connect_vpn(username: &str, password: &str) -> Result<(), String> {
     let username_script = format!(r#"tell application "System Events" to keystroke "{}""#, username);
     run_applescript(&username_script)?;
     run_applescript(r#"tell application "System Events" to keystroke tab"#)?;
-    thread::sleep(Duration::from_secs(1));
+    thread::sleep(Duration::from_millis(500));
 
     // Type the password and press Enter
     let password_script = format!(r#"tell application "System Events" to keystroke "{}""#, password);
@@ -188,7 +188,7 @@ fn main() {
             Arg::with_name("stop")
                 .short('s')
                 .long("stop")
-                .help("Stops the Cisco VPN application completely")
+                .help("Stop the Cisco VPN application completely")
                 .takes_value(false), // No value needed for this flag
         )
         .arg(
