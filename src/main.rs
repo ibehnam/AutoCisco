@@ -6,7 +6,6 @@ use std::{env, process::Command, thread};
 use std::time::{Duration, Instant};
 
 
-
 // Function to read credentials from a file
 fn read_credentials_from_file(file_path: &PathBuf) -> io::Result<(String, String)> {
     let mut file = File::open(file_path)?;
